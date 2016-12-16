@@ -16,7 +16,7 @@ func (r *CountReader) Count() int64 {
 }
 
 func (r *CountReader) Read(data []byte) (n int, err error) {
-	n, err = r.Read(data)
+	n, err = r.r.Read(data)
 	r.n += int64(n)
 	return n, err
 }
